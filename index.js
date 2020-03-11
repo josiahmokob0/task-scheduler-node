@@ -1,17 +1,21 @@
-import express from "express";
-import dotenv from "dotenv"
-import cronJob from "cron";
-import Models from "./models";
+const express = require("express");
+const dotenv = require("dotenv");
+const cronJob = require("cron");
+
+const Models = require("./models");
+const router = require('./lib/index');
+const server = require("./server");
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
+
 const context = {
   app,
   cronJob,
   db: Models,
 }
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+router(context);
+
+server(app, PORT);
