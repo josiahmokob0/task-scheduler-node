@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const cronJob = require("cron");
 
 const Models = require("./models");
-const Tasks = require("./lib/tasks/index");
+const router = require('./lib/index');
 const server = require("./server");
 
 dotenv.config();
@@ -16,5 +16,6 @@ const context = {
   db: Models,
 }
 
-Tasks(context);
+router(context);
+
 server(app, PORT);
