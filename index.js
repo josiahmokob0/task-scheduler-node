@@ -1,21 +1,31 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const cronJob = require("cron");
+const CronJob = require("cron").CronJob;
+const bodyParser = require("body-parser");
 
-const Models = require("./models");
+const { db, sequelize } = require("./models");
 const router = require('./lib/index');
-const server = require("./server");
+const runJob = require("./lib/scheduler");
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const context = {
   app,
-  cronJob,
-  db: Models,
+  CronJob,
+  db,
+  PORT,
+  sequelize,
 }
 
-router(context);
+router(context),
 
-server(app, PORT);
+// start cron-job
+runJob(context);
+
+module.exports = {
+  context,
+}
