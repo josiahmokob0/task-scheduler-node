@@ -1,7 +1,7 @@
-const server = (app, PORT) => {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+const { context } = require("./index");
 
-module.exports = server;
+const { PORT, app } = context;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

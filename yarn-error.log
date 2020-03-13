@@ -1,0 +1,58 @@
+Arguments: 
+  /home/josiah/.nvm/versions/node/v10.19.0/bin/node /home/josiah/.nvm/versions/node/v10.19.0/bin/yarn test
+
+PATH: 
+  /Users/josiahnyarega/go/bin:/usr/local/go/bin:/home/josiah/.local/bin:/Users/josiahnyarega/go/bin:/usr/local/go/bin:/home/josiah/.nvm/versions/node/v10.19.0/bin:/home/josiah/.local/bin:/home/josiah/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/josiah/.nvm/versions/node/v12.16.1/lib/node_modules:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/josiah/.nvm/versions/node/v12.16.1/lib/node_modules
+
+Yarn version: 
+  1.22.1
+
+Node version: 
+  10.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/josiah/Documents/Projects/task-schedule-node/package.json: Unexpected string in JSON at position 387
+      at JSON.parse (<anonymous>)
+      at /home/josiah/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/josiah/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/josiah/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "task-schedule-node",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "node ./index.js",
+      "pretest": "NODE_ENV=test ./node_modules/.bin/sequelize db:create && ./node_modules/.bin/sequelize db:migrate ",
+      "test": "NODE_ENV=test mocha --testPathPattern='./tests/.*\\.test\\.js$' --detectOpenHandles --runInBand --forceExit"
+      "lint": "eslint \"**/*.js\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "sequelize": "^5.21.5"
+    },
+    "devDependencies": {
+      "cron": "^1.8.2",
+      "eslint": "^6.8.0",
+      "mocha": "^7.1.0",
+      "nyc": "^15.0.0",
+      "pg": "^7.18.2",
+      "sequelize-cli": "^5.5.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
