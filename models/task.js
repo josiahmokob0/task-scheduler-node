@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     completed: DataTypes.DATE,
     deffered: DataTypes.DATE,
     status: DataTypes.STRING,
-    transaction_id: DataTypes.INTEGER
+    transaction_id: DataTypes.INTEGER,
   }, {});
   Task.associate = function(models) {
     // associations can be defined here

@@ -8,7 +8,7 @@ module.exports = {
     database: process.env.DEV_DB_DATABASE_NAME,
     host: process.env.DEV_DB_HOST,
     dialect: process.env.DEV_DB_DIALECT,
-    operatorsAliases: false
+    operatorsAliases: false,
   },
   test: {
     username: process.env.TEST_DB_USERNAME,
@@ -16,7 +16,7 @@ module.exports = {
     database: process.env.TEST_DB_DATABASE_NAME,
     host: process.env.TEST_DB_HOST,
     dialect: process.env.TEST_DB_DIALECT,
-    operatorsAliases: false
+    operatorsAliases: false,
   },
   production: {
     username: process.env.PROD_DB_USERNAME,
@@ -24,6 +24,6 @@ module.exports = {
     database: process.env.PROD_DB_DATABASE_NAME,
     host: process.env.PROD_DB_HOST,
     dialect: process.env.PROD_DB_DIALECT,
-    operatorsAliases: false
-  }
+    operatorsAliases: false,
+  },
 };

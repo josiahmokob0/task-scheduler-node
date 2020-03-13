@@ -20,7 +20,7 @@ describe("Transactions", () => {
     it("should get all transactions", (done) => {
       chai.request(app)
         .get('/transactions')
-        .end((err, res) => {
+        .end((_, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
           done();
@@ -32,7 +32,7 @@ describe("Transactions", () => {
     it("should add new transaction", (done) => {
       chai.request(app)
         .post('/transactions')
-        .end((err, res) => {
+        .end((_, res) => {
           res.should.have.status(201);
           res.body.should.be.a('object');
           done();
@@ -45,7 +45,7 @@ describe("Transactions", () => {
     it("should update a transaction", (done) => {
       chai.request(app)
         .patch('/transactions')
-        .end((err, res) => {
+        .end((_, res) => {
           res.should.have.status(204);
           done();
         })
@@ -54,7 +54,7 @@ describe("Transactions", () => {
     it("should update a transaction sadsa", (done) => {
       chai.request(app)
         .patch('/transactions/id:676767')
-        .end((err, res) => {
+        .end((_, res) => {
           res.should.have.status(404);
           done();
         })
@@ -66,7 +66,7 @@ describe("Transactions", () => {
     it("should delete a transaction", (done) => {
       chai.request(app)
         .delete('/transactions')
-        .end((err, res) => {
+        .end((_, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
           done();
