@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const CronJob = require("cron").CronJob;
 const bodyParser = require("body-parser");
 
-const { db, sequelize } = require("./models");
+const { db, sequelize, Op } = require("./models");
 const router = require('./lib/index');
 const runJob = require("./lib/scheduler");
 
@@ -19,9 +19,10 @@ const context = {
   db,
   PORT,
   sequelize,
+  Op,
 }
 
-router(context),
+router(context);
 
 // start cron-job
 runJob(context);

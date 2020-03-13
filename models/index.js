@@ -3,13 +3,12 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
+const { Op } = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-console.log(env, "Josiah", process.env.NODE_ENV);
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
-console.log(config);
 
 let sequelize;
 if (config.use_env_variable) {
@@ -37,4 +36,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = { db, sequelize }
+module.exports = { db, sequelize, Op }
