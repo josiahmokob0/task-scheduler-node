@@ -10,7 +10,6 @@ module.exports = {
       },
       transaction_id: {
         type: Sequelize.INTEGER,
-        references: { model: 'Transaction', key: 'id' },
         allowNull: false,
       },
       assigned: {

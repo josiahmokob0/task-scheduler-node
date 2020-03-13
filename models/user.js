@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
   }, {});
+
   User.associate = function(models) {
     User.hasMany(models.Transaction, {
       onDelete: 'RESTRICT',
@@ -16,5 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
   };
+
   return User;
 };

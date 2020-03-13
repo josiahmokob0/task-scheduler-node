@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 
 const { db, sequelize, Op } = require("./models");
 const router = require('./lib/index');
-const runJob = require("./lib/scheduler");
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -23,9 +22,6 @@ const context = {
 }
 
 router(context);
-
-// start cron-job
-runJob(context);
 
 module.exports = {
   context,

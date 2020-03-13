@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node ./server.js",
     "pretest": "NODE_ENV=test npx sequelize db:migrate",
-    "test": "NODE_ENV=test mocha tests/*.js --detectOpenHandles --runInBand --forceExit",
+    "test": "NODE_ENV=test mocha tests/*.js --detectOpenHandles --runInBand --exit",
     "lint": "eslint \"**/*.js\""
   },
   "keywords": [],
