@@ -8,6 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      transaction_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'Transaction', key: 'id' },
+        allowNull: false,
+      },
       assigned: {
         type: Sequelize.DATE
       },
@@ -22,9 +27,6 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING
-      },
-      transaction_id: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

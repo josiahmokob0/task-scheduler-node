@@ -13,9 +13,24 @@ module.exports = (sequelize, DataTypes) => {
     customer_phone_number: DataTypes.STRING,
     customer_age: DataTypes.INTEGER,
     customer_gender: DataTypes.STRING,
+    user_id: DataTypes.INTEGER,
   }, {});
+
   Transaction.associate = function(models) {
-    // associations can be defined here
+    Transaction.hasMany(models.Task, {
+      foreignKey: {
+        name: 'transaction_id',
+        allowNull: 'false'
+      }
+    });
+
+    Transaction.belongsTo(models.User, {
+      foreignKey: {
+        name: 'user_id',
+        allowNull: false,
+      },
+    });
+
   };
   return Transaction;
 };

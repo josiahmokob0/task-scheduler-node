@@ -8,8 +8,14 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.STRING,
     transaction_id: DataTypes.INTEGER,
   }, {});
+
   Task.associate = function(models) {
-    // associations can be defined here
+   Task.belongsTo(models.Transaction, {
+      foreignKey: {
+        name: 'transaction_id',
+        allowNull: 'false'
+      }
+    });
   };
   return Task;
 };
