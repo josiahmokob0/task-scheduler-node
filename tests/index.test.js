@@ -10,7 +10,6 @@ const { app, db: models } = context;
 chai.use(chaiHttp);
 chai.should();
 
-
 describe("Transactions", () => {
 
   beforeEach(async () => {

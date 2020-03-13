@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Task.associate = function(models) {
-    console.log(models)
     Task.belongsTo(models.Transaction, {
       foreignKey: {
         name: 'transaction_id',
