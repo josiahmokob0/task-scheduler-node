@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Transaction = sequelize.define('Transaction', {
+  const Transaction = sequelize.define("Transaction", {
     location: DataTypes.STRING,
     access_code: DataTypes.INTEGER,
     splash_page: DataTypes.INTEGER,
@@ -20,15 +20,17 @@ module.exports = (sequelize, DataTypes) => {
 
   Transaction.associate = function(models) {
     Transaction.hasMany(models.Task, {
+      onDelete: "RESTRICT",
+      onUpdate: "RESTRICT",
       foreignKey: {
-        name: 'transaction_id',
-        allowNull: 'false'
+        name: "transaction_id",
+        allowNull: false,
       }
     });
 
     Transaction.belongsTo(models.User, {
       foreignKey: {
-        name: 'user_id',
+        name: "user_id",
         allowNull: false,
       },
     });

@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
+  const User = sequelize.define("User", {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     username: DataTypes.STRING,
@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     User.hasMany(models.Transaction, {
-      onDelete: 'RESTRICT',
-      onUpdate: 'RESTRICT',
+      onDelete: "RESTRICT",
+      onUpdate: "RESTRICT",
       foreignKey: {
-        name: 'user_id',
+        name: "user_id",
         type: DataTypes.INTEGER,
         allowNull: false,
       }

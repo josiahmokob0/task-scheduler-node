@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Task = sequelize.define('Task', {
+  const Task = sequelize.define("Task", {
     assigned: DataTypes.DATE,
     in_progress: DataTypes.DATE,
     completed: DataTypes.DATE,
@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   Task.associate = function(models) {
     Task.belongsTo(models.Transaction, {
       foreignKey: {
-        name: 'transaction_id',
+        name: "transaction_id",
         allowNull: 'false'
       }
     });
