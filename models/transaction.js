@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     customer_phone_number: DataTypes.STRING,
     customer_age: DataTypes.INTEGER,
     customer_gender: DataTypes.STRING,
+    personel_first_name: DataTypes.STRING,
+    personel_other_name: DataTypes.STRING,
     user_id: DataTypes.INTEGER,
   }, {});
 

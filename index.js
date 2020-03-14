@@ -6,6 +6,7 @@ const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const jwt = require('jsonwebtoken');
 const passportJWT = require("passport-jwt");
+const bcrypt = require('bcrypt');
 
 const { db, sequelize, Op } = require("./models");
 const router = require('./lib/index');
@@ -30,6 +31,7 @@ const context = {
   jwt,
   JWTStrategy: passportJWT.Strategy,
   ExtractJwt: passportJWT.ExtractJwt,
+  bcrypt,
 }
 
 passportInitialize(context);

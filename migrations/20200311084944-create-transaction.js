@@ -12,6 +12,12 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      personel_first_name: {
+        type: Sequelize.STRING,
+      },
+      personel_other_name: {
+        type: Sequelize.INTEGER,
+      },
       location: {
         type:  Sequelize.STRING,
       },
