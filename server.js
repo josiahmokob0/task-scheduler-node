@@ -5,5 +5,5 @@ const { PORT, app } = context;
 
 app.listen(PORT, () => {
   runJob(context);
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port http://127.0.0.1:${PORT}`);
 });

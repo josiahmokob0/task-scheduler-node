@@ -3,18 +3,20 @@ const dotenv = require("dotenv");
 const CronJob = require("cron").CronJob;
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+const LocalStrategy = require('passport-local').Strategy;
+const jwt = require('jsonwebtoken');
+const passportJWT = require("passport-jwt");
 
 const { db, sequelize, Op } = require("./models");
 const router = require('./lib/index');
+const passportInitialize = require("./lib/authenticate/passport.config");
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(passport.initialize());
 
+app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 
 const context = {
   app,
@@ -25,8 +27,12 @@ const context = {
   Op,
   passport,
   LocalStrategy,
+  jwt,
+  JWTStrategy: passportJWT.Strategy,
+  ExtractJwt: passportJWT.ExtractJwt,
 }
 
+passportInitialize(context);
 router(context);
 
 module.exports = {
