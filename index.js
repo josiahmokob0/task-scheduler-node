@@ -7,6 +7,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const jwt = require("jsonwebtoken");
 const passportJWT = require("passport-jwt");
 const bcrypt = require("bcrypt");
+const cors = require("cors");
 
 const { db, sequelize, Op } = require("./models");
 const router = require("./lib/index");
@@ -18,6 +19,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json());
+app.use(cors());
 
 const context = {
   app,
