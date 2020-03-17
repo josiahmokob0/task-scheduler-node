@@ -12,4 +12,15 @@ cd task-schedule-node
 npm install
 npm start
 ```
-And then point your browser to: https://localhost:3000
+## Enpoints
+
+endpoints | method | type
+--- | --- | ---
+/register | POST | public
+/login | POST | public
+/reset | POST | public
+/transactions | POST | private
+/transactions | GET | private
+/transactions | DELETE | private
+/transactions | PATCH | private
+1 | 2 | 3
