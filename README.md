@@ -2,6 +2,7 @@
 
 ## Description
  - An api to schedule & process tasks.
+ - The API can be accessed using this url [tasks scheduler](https://murmuring-savannah-87995.herokuapp.com/)
 
 ## Setup
 - Copy contents for .sample_env file and replace with correct values
