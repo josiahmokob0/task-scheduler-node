@@ -17,10 +17,10 @@ module.exports = {
     dialect: process.env.TEST_DB_DIALECT,
   },
   production: {
-    use_env_variable: process.env.PROD_DB_URL,
-    dialect: process.env.PROD_DB_DIALECT,
+    url: process.env.DEV_DB_URL,
+    dialect: process.env.DEV_DB_DIALECT,
     dialectOptions: {
-      ssl: true
+      ssl: false
     },
   },
 };
