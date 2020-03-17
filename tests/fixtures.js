@@ -15,6 +15,14 @@ const transaction = {
     user_id: "1"
 }
 
+const user =  {
+  username: "josh",
+  password: "josiah",
+  firstName: "josiah",
+  lastName: "Nyarega",
+}
+
 module.exports = {
   transaction,
+  user,
 }
