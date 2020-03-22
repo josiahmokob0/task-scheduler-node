@@ -1,4 +1,3 @@
-// test/truncate.js
 const map = require("lodash/map");
 
 async function truncate(models) {

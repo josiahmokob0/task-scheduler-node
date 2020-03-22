@@ -1,4 +1,3 @@
-
 const transaction = {
     location: "NRB",
     access_code: 1,
